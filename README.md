@@ -6,7 +6,8 @@ Use ngrx and create or modify appropriate actions, effects, reducers, and select
 You should [fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the project, and [create a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) once you are finished.
 
 1. There is user profile page with dummy data and /profile route. Use the public API at [Random User Generator](https://randomuser.me/) ([Docs](https://randomuser.me/documentation)) to pull in a random user and populate the profile page.
-Add a route `/profile/{id}` which should show the same page but populate user info by id from the same random server endpoint (it doesn't allow you to get a user by id so just get a list of users and output first one). Id type is string.
+Add a route `/profile/{id}` which should show the same page but populate user info by id (call https://randomuser.me/api?seed={id} to emulate id request).
+Id type is string.
 If Id is missing - fetch some random user as was descibed above.
 
 2. Create new page `/home` with just a single component: users search field.
