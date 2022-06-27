@@ -1,0 +1,22 @@
+<div class="search-home">
+    <!--    <mat-form-field class="example-form-field" appearance="fill">-->
+    <!--        <mat-label>Input user name</mat-label>-->
+    <input #search (input)="inputData(search)" type="text" [(ngModel)]="value" />
+
+    <!--    </mat-form-field>-->
+    <mat-grid-list cols="5" rowHeight="300">
+        <mat-grid-tile *ngFor="let user of usersList$ | async">
+            <mat-card class="card">
+                <mat-card-title-group>
+                    <mat-card-title>{{ user.firstName }} {{ user.lastName }}</mat-card-title>
+                    <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+                    <img mat-card-sm-image [src]="user.picture" alt="" />
+                </mat-card-title-group>
+                <mat-list role="list">
+                    <mat-list-item role="listitem">State: {{ user.state }}</mat-list-item>
+                    <mat-list-item role="listitem">City: {{ user.city }}</mat-list-item>
+                </mat-list>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

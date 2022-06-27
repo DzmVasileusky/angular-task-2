@@ -1,5 +1,10 @@
-import { createAction } from '@ngrx/store';
+import {createAction, props} from '@ngrx/store';
+import {UserProfile} from '@interfaces';
 
 const initProfile = createAction('[Profile] Init');
 
-export const profileActions = { initProfile };
+const userPending = createAction('[User] Get user pending');
+
+const userInit = createAction('[User] Get user init', props<{ user: UserProfile }>());
+
+export const profileActions = {initProfile, userPending, userInit};

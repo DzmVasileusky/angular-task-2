@@ -1,7 +1,7 @@
-import { ProfileState } from '@interfaces';
-import { Action, createReducer, on } from '@ngrx/store';
-import { profileActions } from '@store/actions';
-import { UserProfile } from '../interfaces';
+import {ProfileState} from '@interfaces';
+import {Action, createReducer, on} from '@ngrx/store';
+import {profileActions} from '@store/actions';
+import {UserProfile} from '../interfaces';
 
 const dummyProfile: UserProfile = {
     cellNumber: '888-888-8888',
@@ -19,10 +19,11 @@ const initialState: ProfileState = {};
 
 const reducer = createReducer(
     initialState,
-    on(profileActions.initProfile, (state) => ({ ...state, user: dummyProfile }))
+    on(profileActions.initProfile, (state) => ({...state, user: dummyProfile})),
+    on(profileActions.userInit, (state, action) => ({...state, user: action.user}))
 );
 
-export function getProfileReducer (state: ProfileState | undefined, action: Action) {
+export function getProfileReducer(state: ProfileState | undefined, action: Action) {
 
     return reducer(state, action);
 
