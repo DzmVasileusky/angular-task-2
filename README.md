@@ -15,6 +15,8 @@ When user have added more then 3 characters in the input - make a request to ran
 Show their name + surname in the dropdown. By clicking on the user from the list open `/profile/{id}` page. Calculate `id` as `firstnamelastname` or the user from the list. Example: `/profile/dzmitryvasileuski`
 When user have changed the text inside the input - refresh the list with another 10 users.
 
+Use NGRX to fetch and store data.
+
 The UI is up to you, although it is recommended to use [Angular Material](https://material.angular.io/components/categories) components.
 
 # Project details
