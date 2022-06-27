@@ -5,9 +5,14 @@ Use ngrx and create or modify appropriate actions, effects, reducers, and select
 
 You should [fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the project, and [create a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) once you are finished.
 
-1. The user profile page is currently loaded with dummy data. Use the public API at [Random User Generator](https://randomuser.me/) ([Docs](https://randomuser.me/documentation)) to pull in a random user and populate the profile page. You should get the relevant data from the API to fill a `ProfileStore`.
+1. There is user profile page with dummy data and /profile route. Use the public API at [Random User Generator](https://randomuser.me/) ([Docs](https://randomuser.me/documentation)) to pull in a random user and populate the profile page.
+Add a route `/profile/{id}` which should show the same page but populate user info by id from the same random server endpoint (it doesn't allow you to get a user by id so just get a list of users and output first one). Id type is string.
+If Id is missing - fetch some random user as was descibed above.
 
-2. Create a new page, a profile list. Pull in 10 random profiles to populate this list, storing them in the state, and make each profile list item clickable, sending the user to a user details page with that user data. The user profile page route should be adjusted to take an optional id param, which if missing will show a random user (step 1)
+2. Create new page `/home` with just a single component: users search field.
+When user have added more then 3 characters in the input - make a request to random user API and pull 10 random users.
+Show their name + surname in the dropdown. By clicking on the user from the list open `/profile/{id}` page. Calculate `id` as `firstnamelastname` or the user from the list. Example: `/profile/dzmitryvasileuski`
+When user have changed the text inside the input - refresh the list with another 10 users.
 
 The UI is up to you, although it is recommended to use [Angular Material](https://material.angular.io/components/categories) components.
 
