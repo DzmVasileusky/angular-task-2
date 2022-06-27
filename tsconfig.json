@@ -21,6 +21,7 @@
         "@auth/*": ["src/app/core/auth/*"],
         "@core/*": ["src/app/core/*"],
         "@features/*": ["src/app/features/*"],
+        "@searchHome/*": ["src/app/features/search-home/*"],
         "@interfaces": ["src/app/app.interfaces"],
         "@store/*": ["src/app/store/*"],
         "content/*": ["src/content/*"]
